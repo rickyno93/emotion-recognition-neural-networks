@@ -39,7 +39,7 @@ def format_image(image):
   except Exception:
     print("[+] Problem during resize")
     return None
-  print image.shape
+  print (image.shape)
   return image
 
 
@@ -75,10 +75,10 @@ for index, row in data.iterrows():
         #labels.append(emotion)
         #images.append(flip_image(image))
     else:
-        print "Error"
+        print ("Error")
     index += 1
-    print "Progreso: {}/{} {:.2f}%".format(index, total, index * 100.0 / total)
+    print ("Progreso: {}/{} {:.2f}%".format(index, total, index * 100.0 / total))
 
-print "Total: " + str(len(images))
+print ("Total: " + str(len(images)))
 np.save('data_kike.npy', images)
 np.save('labels_kike.npy', labels)

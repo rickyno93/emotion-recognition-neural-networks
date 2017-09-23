@@ -16,7 +16,7 @@ labels = np.load(join(SAVE_DIRECTORY, SAVE_DATASET_LABELS_FILENAME))
 images = images.reshape([-1, SIZE_FACE, SIZE_FACE, 1])
 labels = labels.reshape([-1, len(EMOTIONS)])
 
-print '[+] Loading Data'
+print ('[+] Loading Data')
 data = np.zeros((len(EMOTIONS),len(EMOTIONS)))
 for i in xrange(images.shape[0]):
 	result = network.predict(images[i])
@@ -28,9 +28,9 @@ for i in range(len(data)):
 	total = np.sum(data[i])
 	for x in range(len(data[0])):
 		data[i][x] = data[i][x] / total
-print data
+print (data)
 
-print '[+] Generating graph'
+print ('[+] Generating graph')
 c = plt.pcolor(data, edgecolors = 'k', linewidths = 4, cmap = 'Blues', vmin = 0.0, vmax = 1.0)
  
 def show_values(pc, fmt="%.2f", **kw):

@@ -58,6 +58,6 @@ for f in files:
    
   if result is not None:
     for index, emotion in enumerate(EMOTIONS):
-      print emotion, ': ', result[0][index]
+      print (emotion, ': ', result[0][index])
 
-  print "Emotion: of ", f, "-", EMOTIONS[np.argmax(result[0])]
+  print ("Emotion: of ", f, "-", EMOTIONS[np.argmax(result[0])])
